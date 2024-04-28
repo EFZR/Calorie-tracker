@@ -1,11 +1,13 @@
-import { useState, ChangeEvent, FormEvent, Dispatch } from "react";
+import { useState, ChangeEvent, FormEvent, Dispatch, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { categories } from "../data/categories";
 import { ActivityActions } from "../reducers/activity-reducers";
 import type { Activity } from "../types";
+import type { ActivityState } from "../reducers/activity-reducers";
 
 type FormProps = {
   dispatch: Dispatch<ActivityActions>;
+  state: ActivityState;
 };
 
 const initialState: Activity = {
@@ -15,8 +17,17 @@ const initialState: Activity = {
   calories: 0
 }
 
-export default function Form({ dispatch }: FormProps) {
+export default function Form({ state, dispatch }: FormProps) {
   const [activity, setActivity] = useState<Activity>(initialState);
+
+  useEffect(() => {
+    if (state.activeId) {
+      const currentActivity = state.activities.find(activity => activity.id === state.activeId);
+      if (currentActivity) {
+        setActivity(currentActivity);
+      }
+    }
+  }, [state.activeId])
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const isNumberField = ['category', 'calories'].includes(e.target.id);
@@ -65,6 +76,7 @@ export default function Form({ dispatch }: FormProps) {
           id="name"
           className="border border-slate-300 p-2"
           placeholder="Actividad ej. Comida, Jugo de Naranja, Ensalada, Ejercicio, Pesas, Bicicleta"
+          autoComplete="off"
           value={activity.name}
           onChange={handleChange}
         />
