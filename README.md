@@ -1,32 +1,30 @@
-# React + TypeScript + Vite
+# Calorie Tracker 🏃‍♂️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Calorie Tracker es una aplicación web desarrollada en React que permite a los usuarios rastrear su consumo diario de calorías. Los usuarios pueden agregar, editar y eliminar alimentos consumidos durante el día. La aplicación calcula automáticamente la cantidad total de calorías consumidas.
 
-Currently, two official plugins are available:
+## Características 🚀
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Cálculo automático de calorías**: La aplicación calcula automáticamente la cantidad total de calorías consumidas en un día.
+- **Gestión de alimentos consumidos**: Los usuarios pueden agregar, editar y eliminar los alimentos que han consumido.
+- **Persistencia de datos**: Los alimentos consumidos se guardan en el almacenamiento local del navegador, por lo que los datos persisten incluso después de cerrar la aplicación.
+- **Manejo del estado de la aplicación**: Se utiliza `useReducer` para manejar el estado de la aplicación, lo que facilita la gestión de estados complejos.
 
-## Expanding the ESLint configuration
+## Tecnologías 🛠️
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Este proyecto utiliza las siguientes tecnologías:
 
-- Configure the top-level `parserOptions` property like this:
+- [**React**](https://es.reactjs.org/): Una biblioteca de JavaScript para construir interfaces de usuario.
+- [**TailwindCSS**](https://tailwindcss.com/): Un marco de CSS de utilidad para la construcción rápida de interfaces de usuario personalizadas.
+- [**Vite**](https://vitejs.dev/): Una herramienta de construcción que proporciona un desarrollo más rápido y un rendimiento de producción más eficiente.
+- [**Typescript**](https://www.typescriptlang.org/): Un superconjunto de JavaScript que añade tipado estático y objetos basados en clases.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## Instalación y ejecución 📦
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Para instalar y ejecutar este proyecto, sigue los siguientes pasos:
 
-## safe commit 2
+1. Clona el repositorio: `git clone https://github.com/EFZR/Calorie-tracker.git`
+2. Navega al directorio del proyecto: `cd Calorie-tracker`
+3. Instala las dependencias: `npm install`
+4. Ejecuta el proyecto: `npm run dev`
+
+Ahora, la aplicación debería estar corriendo en `http://localhost:5000`.
