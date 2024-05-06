@@ -1,22 +1,14 @@
 import useActivity from "../hooks/useActivity";
-import { Activity } from "../types";
-import { categories } from "../data/categories";
-import { useMemo } from "react";
 import { PencilSquareIcon, XCircleIcon } from "@heroicons/react/24/outline";
 
 export default function ActivityList() {
-  const { activities, setActiveId, deleteActivity } = useActivity();
-
-  const categoryName = useMemo(
-    () => (category: Activity["category"]) =>
-      categories.map((item) => (item.id === category ? item.name : "")),
-    [activities]
-  );
-
-  const isEmptyActivities = useMemo(
-    () => activities.length === 0,
-    [activities]
-  );
+  const {
+    activities,
+    setActiveId,
+    deleteActivity,
+    categoryName,
+    isEmptyActivities,
+  } = useActivity();
 
   return (
     <>
