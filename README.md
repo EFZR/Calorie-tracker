@@ -22,9 +22,9 @@ Este proyecto utiliza las siguientes tecnologías:
 
 Para instalar y ejecutar este proyecto, sigue los siguientes pasos:
 
-1. Clona el repositorio: `git clone https://github.com/EFZR/Calorie-tracker.git`
-2. Navega al directorio del proyecto: `cd Calorie-tracker`
+1. Clona el repositorio: `git clone https://github.com/EFZR/control-gastos.git`
+2. Navega al directorio del proyecto: `cd control-gastos`
 3. Instala las dependencias: `npm install`
 4. Ejecuta el proyecto: `npm run dev`
 
-Ahora, la aplicación debería estar corriendo en `http://localhost:5000`.
+Ahora, la aplicación debería estar corriendo en `http://localhost:5173`.
